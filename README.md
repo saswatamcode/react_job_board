@@ -17,7 +17,8 @@ A web application which lists various jobs using the Github Jobs API. Built usin
 A simple web application which consists of a data feed, an API and a client end. The data feed is a cron job which fires every hour and gets updated jobs from Github Jobs and then populates it into a Redis datastore. The node.js API fetches jobs from redis and presents it to the frontend built with React and material-ui.
 
 ## Screenshot
-![Screenshot-1!](screenshots/Screenshot-1.png)
+![Screenshot-1!](screenshots/Screenshot-1.png) ![Screenshot-2!](screenshots/Screenshot-2.png)
+
 
 ## To run
 - Clone into repo
