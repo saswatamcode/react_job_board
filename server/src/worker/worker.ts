@@ -1,5 +1,6 @@
 import cron from "cron";
 import { fetchGithub } from "./tasks/fetch-github";
+import log from "../utils/logger";
 
 const CronJob = cron.CronJob;
 
@@ -11,6 +12,6 @@ const job = new CronJob(
   "America/Los_Angeles"
 );
 
-console.log("Start cron job");
+log.info("Starting cron job");
 
 job.start();

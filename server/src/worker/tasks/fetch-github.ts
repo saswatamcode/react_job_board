@@ -1,13 +1,14 @@
 import fetch from "node-fetch";
 import Redis from "ioredis";
 import { IJob } from "../../types";
+import log from "../../utils/logger";
 
 const redis = new Redis();
 
 const baseURL = "https://jobs.github.com/positions.json";
 
 const fetchGithub = async () => {
-  console.log("fetching");
+  log.info("Start fetching GitHub Jobs");
   var resultCount = 1;
   var onPage = 0;
   var allJobs: IJob[] = [];
@@ -20,31 +21,14 @@ const fetchGithub = async () => {
       allJobs.push(...jobs);
       resultCount = jobs.length;
       onPage++;
-      console.log("res", resultCount);
+      log.info(`Fetch ${resultCount} jobs on page ${onPage}`);
     } catch (err) {
-      console.log(err);
+      log.error("GitHub Jobs fetch error: %s", err.message);
     }
   }
 
-  console.log(allJobs.length);
-
-  //filter
-  const jrJobs = allJobs.filter((job) => {
-    const jobTitle = job.title.toLowerCase();
-    if (
-      jobTitle.includes("senior") ||
-      jobTitle.includes("manager") ||
-      jobTitle.includes("sr") ||
-      jobTitle.includes("architect")
-    ) {
-      return false;
-    }
-    return true;
-  });
-
-  console.log("filtered to", jrJobs.length);
-  redis.set("github", JSON.stringify(jrJobs));
-  console.log("set to redis");
+  redis.set("github", JSON.stringify(allJobs));
+  log.info(`Setting ${allJobs.length} jobs into redis`);
 };
 
 export { fetchGithub };
