@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import JobList from "./components/JobList";
+import JobList from "./components/JobList/JobList";
 import { IJob } from "./types";
 
 const App: React.FC = () => {

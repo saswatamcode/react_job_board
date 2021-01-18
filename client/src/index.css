@@ -1,9 +1,23 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(133, 0, 190);
+  background: rgb(9, 187, 237);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(9, 187, 237, 1) 0%,
+    rgba(53, 38, 136, 1) 81%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(9, 187, 237, 1) 0%,
+    rgba(53, 38, 136, 1) 81%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(9, 187, 237, 1) 0%,
+    rgba(53, 38, 136, 1) 81%
+  );
 }
