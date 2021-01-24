@@ -5,7 +5,7 @@ import log from "../utils/logger";
 const CronJob = cron.CronJob;
 
 const job = new CronJob(
-  "* * * * *",
+  "0 * * * *",
   fetchGithub,
   null,
   true,
