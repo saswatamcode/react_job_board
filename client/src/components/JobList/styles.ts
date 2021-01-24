@@ -5,11 +5,12 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "2rem",
     color: "white",
     fontWeight: 500,
+    marginLeft: "50px",
   },
   listDiv: {
     display: "flex",
     flexDirection: "column",
-    width: "80%",
+    width: "70%",
     gap: "20px",
   },
 }));

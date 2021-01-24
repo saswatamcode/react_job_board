@@ -1,4 +1,4 @@
-import { Paper } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import { IJob } from "../../types";
 import useStyles from "./styles";
@@ -12,7 +12,7 @@ const JobCard: React.FC<JobCardProps> = ({ job, onClick }) => {
   const classes = useStyles();
   return (
     <>
-      <Paper className={classes.root} elevation={3} onClick={onClick}>
+      <Button className={classes.root} onClick={onClick}>
         <div>
           <Typography variant="h6" className={classes.title}>
             {job.title}
@@ -25,7 +25,7 @@ const JobCard: React.FC<JobCardProps> = ({ job, onClick }) => {
             {job.created_at.split(" ").slice(0, 3).join(" ")}
           </Typography>
         </div>
-      </Paper>
+      </Button>
     </>
   );
 };

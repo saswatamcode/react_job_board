@@ -1,7 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import JobList from "./components/JobList/JobList";
+import Header from "./components/Header/Header";
 import { IJob } from "./types";
+import Loading from "./components/Loading/Loading";
 
 const App: React.FC = () => {
   const [jobs, setJobs] = useState<[IJob]>();
@@ -17,7 +19,13 @@ const App: React.FC = () => {
   };
 
   useEffect(() => fetchData(), []);
-  return <div className="App">{jobs && <JobList jobs={jobs} />}</div>;
+  return (
+    <div className="App">
+      <Header />
+      {!jobs && <Loading />}
+      {jobs && <JobList jobs={jobs} />}
+    </div>
+  );
 };
 
 export default App;
