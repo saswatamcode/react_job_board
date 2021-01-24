@@ -13,6 +13,12 @@ const useStyles = makeStyles((theme) => ({
     width: "70%",
     gap: "20px",
   },
+  pagination: {
+    color: "white",
+    padding: "10px",
+    fontSize: "20px",
+    fontWeight: 600
+  }
 }));
 
 export default useStyles;
